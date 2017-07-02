@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #800000;
+}
+
+.container {
+	text-align: center;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+/*.btn-header {
+	padding-bottom: 100px;
+} dlaczego to nie działa? */
+
+/* h2 {
+	font-weight: 700;
+} dlaczego nie działa w ten sposób? Znaczy element h2 jest tworzony dopiero w JS i domyślam się, że CSS po prostu nie wie, gdzie to h2 przyczepić? */
+
+.create-column {
+	color: black;
+}
+
+.btn-default {
+	margin: 10px;
+	border: none;
+	border-radius: 5%;
+	padding: 10px 15px;
+	box-shadow: none;
+	background-color: #e6e6e6;
+}
+
+/*.btn-delete {
+	color: white;
+	background-color: #800000;
+}*/ 
+/* dlatego to nie działa??? klasa btn-delete jest używana tylko w JS, czy to dlatego? */
+
+.btn-column {
+	color: white;
+	background-color: #800000;
+} 
