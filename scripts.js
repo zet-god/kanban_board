@@ -1,9 +1,5 @@
 // alert('hello');
 
-// $(function (){
-
-// });
-
 function randomString() {
 	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
 	var str = '';
@@ -16,14 +12,14 @@ function randomString() {
 function Column(name) {
 	var self = this;
 	this.id = randomString();
-	this.name = name;
+	this.name = name || 'New column';
 	this.$element = createColumn();
 
 	function createColumn () {
 		// creating components of columns:
-		var $column = $('<div>').addClass('column col-lg-4');
-		var $columnTitle = $('<h2>').addClass('column-title text-center').text(self.name).css('font-weight', '700');
-		var $columnCardList = $('<ul>').addClass('column-card-list').css('list-style-type', 'none');
+		var $column = $('<div>').addClass('column col-md-4');
+		var $columnTitle = $('<h2>').addClass('column-title text-center').text(self.name);
+		var $columnCardList = $('<ul>').addClass('column-card-list');
 		var $columnDelete = $('<button>').addClass('btn-delete btn-default btn-column').text('x');
 		var $columnAddCard = $('<button>').addClass('add-card btn-default').text('Add a card');
 
@@ -34,7 +30,8 @@ function Column(name) {
 
 		// add a note:
 		$columnAddCard.click(function() {
-			self.addCard(new Card(prompt("Enter the name of the card")));
+			event.preventDefault();
+			self.addCard(new Card(prompt("Enter the content of the card")));
 		});
 
 		// contruction column element:
@@ -61,7 +58,7 @@ function Card(description) {
 	var self = this;
 
 	this.id = randomString();
-	this.description = description;
+	this.description = description || "This is a new task...";
 	this.$element = createCard();
 
 	function createCard() {
@@ -80,7 +77,13 @@ function Card(description) {
 				.append($cardDescription);
 
 		// return of the created card:
-		return $card;
+		if (description === "") {
+			return $card;
+		} else if (description) {
+			return $card;
+		} else {
+			return false;
+		}
 	}
 };
 
@@ -110,7 +113,14 @@ $('.create-column')
 	.click(function(){
 		var name = prompt('Enter a column name');
 		var column = new Column(name);
-		board.addColumn(column);
+
+		if (name === "") { 
+			board.addColumn(column);
+		} else if (name) {
+			board.addColumn(column);
+		} else {
+			return false;
+		}
 	});
 
 // creating columns
