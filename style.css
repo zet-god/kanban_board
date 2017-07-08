@@ -25,9 +25,10 @@ body {
 .row {
 	padding: 0;
 	margin: 0;
+	width: 100vw;
 }
 
-.col-sm-4 {
+.col-sm-3 {
 	padding: 10px;
 }
 
@@ -50,19 +51,17 @@ p.card-description {
 .column {
 	position: relative;
 	background-color: #FFF;
-	border-style: solid;
-	border-color: #F8F8F8;
-	border-width: 5px;
+	margin: 10px;
 }
 
 .card {
-	min-height: 60px;
+	/*min-height: 60px;*/
 	background-color: yellow; 
-	display: block;
+/*	display: block;*/
 	position: relative;
-  	margin: 0 auto;
+/*  	margin: 0 auto;
   	padding: 0;
-  	top: 0;
+  	top: 0;*/
 }
 
 .column-card-list {
@@ -97,5 +96,4 @@ p.card-description {
   	color: white;
 	background-color: #800000;
 	border-radius: 5%;
-
 } 
